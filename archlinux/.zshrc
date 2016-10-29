@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias nerd="vim +NERDTree"
-alias github="cd $GOAPTH/github.com"
+alias gh="cd $GOPATH/src/github.com"
 alias dropper='docker rm -f $(docker ps -a -q)'
 
 # Scala

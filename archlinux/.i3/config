@@ -23,9 +23,6 @@ font pango:DejaVu Sans Mono 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-#start eclipse
-#bindsym Mod1+e exec eclipse
-
 #start web browser
 bindsym $mod+g exec chromium 
 
