@@ -1,0 +1,9 @@
+[color]
+	ui = true
+[user]
+	email = prand0001@gmail.com
+	name = patrickrand
+[push]
+	default = matching
+[core]
+	editor = vim
