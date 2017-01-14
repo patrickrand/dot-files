@@ -25,8 +25,8 @@ files=(
     .gitconfig 
     .i3/config 
     .i3status.conf 
-    .oh-my-zsh/oh-my-zsh.sh 
     .vimrc 
+    .editorconfig
     .xinitrc 
     .zshrc 
 )
