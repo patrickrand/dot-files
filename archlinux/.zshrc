@@ -7,7 +7,7 @@ export EDITOR='vim'
 ZSH_THEME="bureau"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git)
+plugins=(git zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
@@ -26,10 +26,6 @@ export PATH=$PATH:$GOPATH/bin
 # Java 
 export JAVA_HOME=/usr/java/jdk1.8.0_11
 export PATH=$PATH:$JAVA_HOME/bin
-
-# Yahoo Developer Network
-export YDN_KEY=dj0yJmk9T3gyeTQ5czZzcFcyJmQ9WVdrOVltSjBkSEJITm1VbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kNw--
-export YDN_SECRET=993643edd51a3df6ec463f4616fe2f7b65a23d60
 
 # Functions
 function rwifi() {
