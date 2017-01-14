@@ -24,8 +24,12 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Java 
-JAVA_HOME=/usr/java/jdk1.8.0_11
-PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME=/usr/java/jdk1.8.0_11
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Yahoo Developer Network
+export YDN_KEY=dj0yJmk9T3gyeTQ5czZzcFcyJmQ9WVdrOVltSjBkSEJITm1VbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kNw--
+export YDN_SECRET=993643edd51a3df6ec463f4616fe2f7b65a23d60
 
 # Functions
 function rwifi() {
@@ -55,4 +59,13 @@ function vol() {
 # DPMS workaround
 xset s off 
 xset -dpms
+
+# SSH agent
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+    eval `ssh-agent`
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l > /dev/null || ssh-add
+
 
