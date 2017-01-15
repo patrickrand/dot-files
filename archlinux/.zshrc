@@ -28,7 +28,9 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
 if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-nvm ]; then
+    # Install zsh-nvm plugin (and nvm, as well)
     git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+    nvm install v6.9 --lts
 fi
 
 plugins=(git zsh-nvm)
