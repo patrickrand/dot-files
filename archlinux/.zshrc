@@ -4,9 +4,6 @@ macOS=false
 arch_linux=false
 if [ "$OS" == "Darwin" ]; then macOS=true; else arch_linux=true; fi
 
-# Zsh
-#if [ $(echo $0) != 'zsh' ]; then chsh -s /usr/local/bin/zsh; fi
-
 # Environment Variables
 export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8
@@ -82,7 +79,7 @@ function dropmic() {
 # Visual Studio Code
 if ! which code >/dev/null 2>&1; then
   if $macOS; then
-    brew install visual-studio-code
+    brew cask install visual-studio-code
   else
     update-vscode
   fi
@@ -95,11 +92,10 @@ if ! which code >/dev/null 2>&1; then
     robertohuertasm.vscode-icons
   )
 
-  for i in "${exts[@]}"; do
-    code --install-extension "$i"
+  for ext in "${vscode_exts[@]}"; do
+    code --install-extension "$ext"
   done
 fi
-
 
 # SSH agent
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
