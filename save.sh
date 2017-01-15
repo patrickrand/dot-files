@@ -39,3 +39,7 @@ for f in "${files[@]}"; do
     echo $dest
 done
 
+if [[ $(uname) == 'Linux' ]]; then
+  echo "Snapshotting pacman package list..."
+  pacman -Q -e > ${repo}/backups/${1}.pacman
+fi

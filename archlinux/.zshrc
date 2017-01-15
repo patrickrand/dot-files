@@ -2,7 +2,7 @@ CURR_DIR=$(pwd)
 OS=$(uname)
 macOS=false
 arch_linux=false
-if [ "$OS" == "Darwin" ]; then macOS=true; else arch_linux=true; fi
+if [[ "$OS" == "Darwin" ]]; then macOS=true; else arch_linux=true; fi
 
 # Environment Variables
 export ZSH=$HOME/.oh-my-zsh
@@ -30,6 +30,7 @@ COMPLETION_WAITING_DOTS="true"
 if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-nvm ]; then
     # Install zsh-nvm plugin (and nvm, as well)
     git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+    nvm install v4.3 --lts # AWS Lambda
     nvm install v6.9 --lts
 fi
 
