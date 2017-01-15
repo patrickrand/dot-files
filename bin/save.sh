@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e 
+set -e
 
-repo=$HOME/dot-files
+repo=~/dot-files
 
 if [ -z "$1" ]; then
     echo "Destination directory is required"
@@ -15,27 +15,27 @@ if [ ! -d "$dir" ]; then
     exit 1
 fi
 
-files=( 
-    .asoundrc 
-    .bash_profile 
-    .bashrc 
-    .config/Code/User/settings.json 
-    .config/fontconfig/fonts.conf 
-    .config/terminator/config 
-    .gitconfig 
-    .i3/config 
-    .i3status.conf 
-    .vimrc 
+files=(
+    .asoundrc
+    .bash_profile
+    .bashrc
+    .config/Code/User/settings.json
+    .config/fontconfig/fonts.conf
+    .config/terminator/config
+    .gitconfig
+    .i3/config
+    .i3status.conf
+    .vimrc
     .editorconfig
-    .xinitrc 
-    .zshrc 
+    .xinitrc
+    .zshrc
 )
 
-echo "Copying dot files into $dir/..."
+echo "Saving dot-files into $dir/..."
 for f in "${files[@]}"; do
     dest=$dir/$f
     mkdir -p $(dirname $dest)
-    cp $HOME/$f $dest
+    cp ~/$f $dest
     echo $dest
 done
 
