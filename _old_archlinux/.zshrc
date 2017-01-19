@@ -15,7 +15,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:$PATH:$GO
 # Homebrew
 if $macOS  && ! which brew >/dev/null 2>&1; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install zsh zsh-completions
+    brew install zsh zsh-completions zsh-syntax-highlighting
+    brew cask install docker slack intellij-idea visual-studio-code
 fi
 
 # Oh My Zsh

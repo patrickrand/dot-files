@@ -1,0 +1,10 @@
+[user]
+  name = Patrick Rand
+  email = prand0001@gmail.com
+[push]
+  default = simple
+[core]
+  excludesfile = ~/.gitignore_global
+	editor = vim
+[color]
+	ui = true
