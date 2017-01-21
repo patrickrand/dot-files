@@ -1,10 +1,9 @@
-// Overwrite settings by placing them into your settings file.
 {
 	//-------- Editor configuration --------
 	// Controls the font family.
-	"editor.fontFamily": "Consolas",
+	"editor.fontFamily": "'Consolas','Courier New', monospace, 'Droid Sans Fallback'",
 	// Controls the font size.
-	"editor.fontSize": 20,
+	"editor.fontSize": 16,
 	// Controls the line height.
 	"editor.lineHeight": 0,
 	// Controls visibility of line numbers

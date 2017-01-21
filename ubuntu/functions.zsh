@@ -3,8 +3,7 @@ deb-install() {
         echo "Debian package is required"
         exit 1
     fi
-
-    dpkg -i $1 && apt-get install -f
+    sudo dpkg -i $1 && sudo apt-get install -f
 }
 
 vscode-download() {

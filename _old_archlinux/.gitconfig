@@ -1,9 +1,0 @@
-[user]
-	name = patrickrand
-	email = prand0001@gmail.com
-[push]
-	default = simple
-[core]
-	editor = vim
-[color]
-	ui = true

@@ -5,90 +5,121 @@ if [ -e ~/.dotfiles ]; then
     return 0
 fi
 
-OS=$(uname)
 macOS=false
 ubuntu=false
-if [[ "$OS" == 'Darwin' ]]; then 
-    macOS=true
-elif [[ "$OS" == 'Linux']]
-    ubuntu=true 
-    source ~/dotfiles/ubuntu/functions.zsh
+case $(uname) in
+    Darwin)       
+        macOS=true
+        source ~/dotfiles/macOS/functions.zsh
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew install caskroom/cask/brew-cask
+        ;;
+    Linux)
+        ubuntu=true
+        source ~/dotfiles/ubuntu/functions.zsh
+        sudo apt-get update
+        ;;            
+    *) echo "Exiting due to unrecognized OS: $(uname)" && exit 1            
+esac 
+
+# Git 
+if $ubuntu; then
+    sudo apt-add-repository ppa:git-core/ppa
+    sudo apt-get update
+    sudo apt-get install git
 else
-    echo "Exiting due to unrecognized OS: $OS"
-    exit 1
+    brew install git
 fi
-
-# Homebrew
-if $macOS  && ! which brew >/dev/null 2>&1; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    #for app in "${apps[@]}"; do
-     #   brew cask install --appdir=/Applications $app >/dev/null
-    #done
-fi
-
-# Apt
-if $ubuntu; then sudo chown -R /var/lib/dpkg /var/apt/cache; fi
-
-programs=(
-awscli
-docker
-docker-compose
-git
-npm
-zsh
-zsh zsh-completions
-zsh-syntax-highlight
-)
-
-apps=(
-docker
-firefox
-google-chrome
-intellij-idea
-slack
-spotify
-visual-studio-code
-)
+ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/git/gitignore_global ~/.gitignore_global
 
 # Zsh (oh-my-zsh)
-if [[ "$0" != 'zsh' ]]; then chsh -s $(which zsh); fi
+[[ "$0" != 'zsh' ]] && chsh -s $(which zsh)
 if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-# Git 
-ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/dotfiles/git/gitignore_global ~/.gitignore_global
+# Pip (python)
+[[ $ubuntu ]] && sudo apt-get install python-pip || brew install pip
 
 # Go
-mkdir ~/go
+mkdir -p ~/go
 
-# Java
+# Docker 
+if $ubuntu; then 
+    sudo apt-get install docker 
+    sudo pip install docker-compose
+else
+    brew install docker docker-compose
+fi
 
-# Node.js (nvm, npm)
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-nvm install v4.3 --lts # AWS Lambda
+# AWS
+[[ $ubuntu ]] && sudo apt-get install awscli || brew install awscli
+
+# nvm (Node.js)
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # Load nvm
+nvm install v4.3 --lts # required for AWS Lambda
 nvm install v6.9 --lts
-nvm use node 
+[[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-nvm ]] && git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
+# npm (Node.js)
+[[ $ubuntu ]] && sudo apt-get install npm || brew install npm
 npm_pkgs=(grunt bower)
 for pkg in "${npm_pkgs[@]}"; do
-  npm install -g $pkg
+  sudo npm install -g $pkg
 done
+
+# Vim
+ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 
 # Visual Studio Code
 if $ubuntu; then 
     vscode-download && deb-install ~/Downloads/vscode.deb
+else
+    cask-install visual-studio-code
 fi
+
+ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 
 vscode_exts=(
     lukehoban.Go
     rebornix.Ruby
     robertohuertasm.vscode-icons
 )
-
 for ext in "${vscode_exts[@]}"; do
     code --install-extension "$ext"
 done
 
-source $ZSH/oh-my-zsh.sh
+# Applications
+apps=(
+    docker
+    firefox
+    google-chrome
+    intellij-idea
+    slack
+    spotify
+)
+for app in "${apps[@]}"; do
+    if $ubuntu; then
+        #...
+    else
+        cask-install $app
+    fi
+done
+
+# Fonts
+if $ubuntu; then
+    sudo apt-get install wget font-manager cabextract
+    mkdir -p /tmp/fonts
+    cd /tmp/fonts
+    wget http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
+    cabextract -L -F ppviewer.cab PowerPointViewer.exe
+    cabextract ppviewer.cab
+    echo "Execute 'font-manager' to install MS fonts..."
+fi
+
+# Finish
+ln -sf ~/dotfiles/zshrc ~/.zshrc
+echo "System configuration complete. Source '.zshrc' to finish."
