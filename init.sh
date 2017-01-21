@@ -1,17 +1,18 @@
 #!/bin/bash
 
-if [ -e ~/.dot-files ]; then
+if [ -e ~/.dotfiles ]; then
     echo "User environment has already been initialized"
     return 0
 fi
 
 OS=$(uname)
 macOS=false
-archlinux=false
+ubuntu=false
 if [[ "$OS" == 'Darwin' ]]; then 
     macOS=true
 elif [[ "$OS" == 'Linux']]
-    archlinux=true 
+    ubuntu=true 
+    source ~/dotfiles/ubuntu/functions.zsh
 else
     echo "Exiting due to unrecognized OS: $OS"
     exit 1
@@ -20,13 +21,34 @@ fi
 # Homebrew
 if $macOS  && ! which brew >/dev/null 2>&1; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install awscli docker docker-compose git npm zsh zsh-completions zsh-syntax-highlighting
-    brew cask install docker google-chrome intellij-idea slack spotify visual-studio-code
-    apps=()
-    for app in "${apps[@]}"; do
-        brew cask install --appdir=/Applications $app >/dev/null
-    done
+    #for app in "${apps[@]}"; do
+     #   brew cask install --appdir=/Applications $app >/dev/null
+    #done
 fi
+
+# Apt
+if $ubuntu; then sudo chown -R /var/lib/dpkg /var/apt/cache; fi
+
+programs=(
+awscli
+docker
+docker-compose
+git
+npm
+zsh
+zsh zsh-completions
+zsh-syntax-highlight
+)
+
+apps=(
+docker
+firefox
+google-chrome
+intellij-idea
+slack
+spotify
+visual-studio-code
+)
 
 # Zsh (oh-my-zsh)
 if [[ "$0" != 'zsh' ]]; then chsh -s $(which zsh); fi
@@ -55,7 +77,10 @@ for pkg in "${npm_pkgs[@]}"; do
 done
 
 # Visual Studio Code
-if $archlinux; then aur-update visual-studio-code; fi
+if $ubuntu; then 
+    vscode-download && deb-install ~/Downloads/vscode.deb
+fi
+
 vscode_exts=(
     lukehoban.Go
     rebornix.Ruby
