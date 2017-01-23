@@ -1,4 +1,5 @@
-# dotfiles
+dotfiles
+---
 
 Auto configuration of my workstation (Ubuntu and macOS)
 
