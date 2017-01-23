@@ -3,9 +3,10 @@ export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
 
 # Path
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin
+export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin
 export PATH=$GOROOT/bin:$PATH
 
 # Oh-My-Zsh 

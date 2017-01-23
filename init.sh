@@ -44,6 +44,13 @@ fi
 
 # Go
 mkdir -p ~/go
+if $ubuntu; then 
+    # ...
+else
+    brew install go
+    sudo ln -sf $(go env GOROOT) /usr/local/go
+    sudo chown -RH $(whoami) /usr/local/go
+fi
 
 # Docker 
 if $ubuntu; then 
@@ -83,6 +90,7 @@ if $ubuntu; then
 else
     cask-install visual-studio-code
 fi
+mkdir -p ~/.config/Code/User
 ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 
 vscode_exts=(
