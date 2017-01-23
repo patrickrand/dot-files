@@ -2,7 +2,11 @@
 export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
+export GOPATH=$HOME/go
+
+# Path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin
+export PATH=$GOROOT/bin:$PATH
 
 # Oh-My-Zsh 
 ZSH_THEME="bureau"
@@ -20,4 +24,9 @@ source $ZSH/oh-my-zsh.sh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Load dotfiles
+for file in ~/dotfiles/**/**.zsh; do
+    source $file
+done

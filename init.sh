@@ -83,7 +83,6 @@ if $ubuntu; then
 else
     cask-install visual-studio-code
 fi
-
 ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 
 vscode_exts=(
@@ -126,4 +125,5 @@ fi
 
 # Finish
 ln -sf ~/dotfiles/zshrc ~/.zshrc
+touch ~/.dotfiles
 echo "System configuration complete. Source '.zshrc' to finish."
