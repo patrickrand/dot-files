@@ -72,6 +72,9 @@ for pkg in "${npm_pkgs[@]}"; do
 done
 
 # Vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then 
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 
 # Visual Studio Code
@@ -105,6 +108,7 @@ for app in "${apps[@]}"; do
     if $ubuntu; then
         #...
     else
+        # BUGGGG
         cask-install $app
     fi
 done
