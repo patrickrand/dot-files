@@ -3,7 +3,7 @@
 	// Controls the font family.
 	"editor.fontFamily": "'Consolas','Courier New', monospace, 'Droid Sans Fallback'",
 	// Controls the font size.
-	"editor.fontSize": 16,
+	"editor.fontSize": 15,
 	// Controls the line height.
 	"editor.lineHeight": 0,
 	// Controls visibility of line numbers

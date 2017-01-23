@@ -78,6 +78,13 @@ for pkg in "${npm_pkgs[@]}"; do
   sudo npm install -g $pkg
 done
 
+# Maven
+if $ubuntu; then 
+    sudo apt-get install maven
+else
+    brew install maven
+fi
+
 # Vim
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then 
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -87,11 +94,11 @@ ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 # Visual Studio Code
 if $ubuntu; then 
     vscode-download && deb-install ~/Downloads/vscode.deb
+    ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 else
     cask-install visual-studio-code
+    ln -sf ~/dotfiles/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 fi
-mkdir -p ~/.config/Code/User
-ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 
 vscode_exts=(
     lukehoban.Go
