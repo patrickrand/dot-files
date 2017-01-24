@@ -6,7 +6,7 @@ export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
 
 # Path
-export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin
+export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin:/sbin
 export PATH=$GOROOT/bin:$PATH
 
 # Oh-My-Zsh 
