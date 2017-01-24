@@ -45,7 +45,7 @@ fi
 # Go
 mkdir -p ~/go
 if $ubuntu; then 
-    # ...
+    sudo apt-get install golang golang-go.tools
 else
     brew install go
     sudo ln -sf $(go env GOROOT) /usr/local/go
@@ -120,7 +120,7 @@ apps=(
 )
 for app in "${apps[@]}"; do
     if $ubuntu; then
-        #...
+        echo "Install app: $app"
     else
         # BUGGGG
         cask-install $app
@@ -137,6 +137,15 @@ if $ubuntu; then
     cabextract ppviewer.cab
     echo "Execute 'font-manager' to install MS fonts..."
 fi
+
+# XTerm
+if $ubuntu; then 
+    sudo apt-get install xterm
+else
+    cask-install xterm
+fi
+ln -sf xterm/Xresources ~/.Xresources
+xrdb -merge ~/.Xresources
 
 # Finish
 ln -sf ~/dotfiles/zshrc ~/.zshrc
