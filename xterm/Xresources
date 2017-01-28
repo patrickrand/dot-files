@@ -9,7 +9,6 @@ xterm*charClass:	33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*eightBitInput:	false
 xterm*faceName:	Consolas
 xterm*faceSize:	14
-xterm*font:	consolas-14
 xterm*highlightSelection:	true
 xterm*locale:	true
 xterm*loginShell:	true
@@ -19,6 +18,7 @@ xterm*saveLines:	16384
 xterm*scrollBar:	true
 xterm*scrollTtyOutput:	false
 xterm*selectToClipboard:	true
-xterm*termName:	xterm-color
+xterm*termName:	xterm-256color
 xterm*trimSelection:	true
 xterm*vt100*geometry:	80x60
+xterm*utf8: 1
