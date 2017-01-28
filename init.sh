@@ -143,10 +143,11 @@ fi
 # XTerm
 if $ubuntu; then 
     sudo apt-get install xterm
+    sudo update-alternatives --config x-terminal-emulator
 else
     cask-install xterm
 fi
-ln -sf xterm/Xresources ~/.Xresources
+ln -sf ~/dotfiles/xterm/Xresources ~/.Xresources
 xrdb -merge ~/.Xresources
 
 # Finish

@@ -1,1 +1,24 @@
-/home/patrickr/.Xresources
+*customization:	-color
+Xft.antialias:	1
+Xft.dpi:	96
+Xft.hinting:	1
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+xterm*VT100.Translations:	#override Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+xterm*charClass:	33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*eightBitInput:	false
+xterm*faceName:	Consolas
+xterm*faceSize:	14
+xterm*font:	consolas-14
+xterm*highlightSelection:	true
+xterm*locale:	true
+xterm*loginShell:	true
+xterm*renderFont:	true
+xterm*rightScrollBar:	true
+xterm*saveLines:	16384
+xterm*scrollBar:	true
+xterm*scrollTtyOutput:	false
+xterm*selectToClipboard:	true
+xterm*termName:	xterm-color
+xterm*trimSelection:	true
+xterm*vt100*geometry:	80x60
