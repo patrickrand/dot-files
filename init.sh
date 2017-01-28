@@ -43,14 +43,9 @@ fi
 [[ $ubuntu ]] && sudo apt-get install python-pip || brew install pip
 
 # Go
-mkdir -p ~/go
-if $ubuntu; then 
-    sudo apt-get install golang golang-go.tools
-else
-    brew install go
-    sudo ln -sf $(go env GOROOT) /usr/local/go
-    sudo chown -RH $(whoami) /usr/local/go
-fi
+mkdir -p ~/go/src ~/go/pkg ~/go/bin
+source ~/dotfiles/golang/functions.zsh
+golang-download
 
 # Docker 
 if $ubuntu; then 
