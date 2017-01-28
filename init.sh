@@ -18,6 +18,7 @@ case $(uname) in
         ubuntu=true
         source ~/dotfiles/ubuntu/functions.zsh
         sudo apt-get update
+        sudo apt-get install wget
         ;;            
     *) echo "Exiting due to unrecognized OS: $(uname)" && exit 1            
 esac 
@@ -124,7 +125,13 @@ done
 
 # Fonts
 if $ubuntu; then
-    sudo apt-get install wget font-manager cabextract
+    echo "Installing Go fonts..."
+    go get github.com/golang/image
+    sudo cp -r ~/go/src/github.com/image/font/gofont/ttfs/*.ttf /usr/local/share/fonts
+    sudo fc-cache -fv
+
+    echo "Installing Consolas fonts..."
+    sudo apt-get install font-manager cabextract
     mkdir -p /tmp/fonts
     cd /tmp/fonts
     wget http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
