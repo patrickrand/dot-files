@@ -3,7 +3,7 @@
 if [ -e ~/.dotfiles ]; then
     echo "User environment has already been initialized"
     return 0
-fi
+fij
 
 macOS=false
 ubuntu=false
@@ -39,6 +39,7 @@ ln -sf ~/dotfiles/git/gitignore_global ~/.gitignore_global
 if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
+ln -sf ~/dotfiles/oh-my-zsh/patrickr.zsh-theme ~/.oh-my-zsh/themes/patrickr.zsh-theme
 
 # Pip (python)
 [[ $ubuntu ]] && sudo apt-get install python-pip || brew install pip

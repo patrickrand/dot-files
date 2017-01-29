@@ -1,18 +1,21 @@
 # Environment Variables
 export ZSH=$HOME/.oh-my-zsh
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 export EDITOR='vim'
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
+export XTERM_LOCALE=en_US.UTF-8
 
 # Path
 export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin:/sbin
 export PATH=$GOROOT/bin:$PATH
 
 # Oh-My-Zsh 
-ZSH_THEME="bureau"
+ZSH_THEME="patrickr"
 DISABLE_AUTO_UPDATE="true"
-plugins=(git zsh-nvm)
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # SSH agent

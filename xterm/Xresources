@@ -18,7 +18,9 @@ xterm*saveLines:	16384
 xterm*scrollBar:	true
 xterm*scrollTtyOutput:	false
 xterm*selectToClipboard:	true
-xterm*termName:	xterm-256color
+xterm*termName: xterm-color
 xterm*trimSelection:	true
 xterm*vt100*geometry:	80x60
 xterm*utf8: 1
+xterm*font:     -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+xterm*wideFont: -misc-fixed-medium-r-normal-ja-18-120-100-100-c-180-iso10646-1
