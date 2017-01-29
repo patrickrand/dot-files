@@ -106,5 +106,6 @@
 
 	//------- Integrated Terminal -------
 	"terminal.integrated.shell.linux": "zsh",
-	"terminal.integrated.fontSize": 18
+	"terminal.integrated.fontSize": 18,
+	"terminal.integrated.fontFamily": "Consolas"
 }
