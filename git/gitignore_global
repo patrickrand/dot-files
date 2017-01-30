@@ -1,4 +1,14 @@
-.DS_Store
+# General
 *.swp
 *.a
+
+# macOS
+.DS_Store
+
+# IntelliJ
 .idea
+*.iml
+
+# Maven
+.project
+.settings
