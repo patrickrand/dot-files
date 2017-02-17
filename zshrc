@@ -10,7 +10,7 @@ export XTERM_LOCALE=en_US.UTF-8
 
 # Path
 export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin:/sbin
-export PATH=$GOROOT/bin:$PATH
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # Oh-My-Zsh 
 ZSH_THEME="patrickr"
@@ -33,3 +33,18 @@ export NVM_DIR="$HOME/.nvm"
 for file in ~/dotfiles/**/**.zsh; do
     source $file
 done
+
+spinner() {
+    pid=$! # Process Id of the previous running command
+
+    spin='-\|/'
+
+    i=0
+    while kill -0 $pid 2>/dev/null
+    do
+        i=$(( (i+1) %4 ))
+        printf "\r${spin:$i:1} $1"
+        sleep .1
+    done
+    printf "\r✓ $1\n"
+}
