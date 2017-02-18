@@ -98,8 +98,13 @@ else
 fi
 
 vscode_exts=(
+    HookyQR.beautify
+    PeterJausovec.vscode-docker
+    Pivotal.vscode-concourse
     lukehoban.Go
+    mauve.terraform
     rebornix.Ruby
+    redhat.java
     robertohuertasm.vscode-icons
 )
 for ext in "${vscode_exts[@]}"; do
