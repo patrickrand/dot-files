@@ -34,6 +34,9 @@ for file in ~/dotfiles/**/**.zsh; do
     source $file
 done
 
+# Aliases
+alias cat="ccat"
+
 spinner() {
     pid=$! # Process Id of the previous running command
 

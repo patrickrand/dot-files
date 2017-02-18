@@ -156,6 +156,9 @@ fi
 ln -sf ~/dotfiles/xterm/Xresources ~/.Xresources
 xrdb -merge ~/.Xresources
 
+# Terminal 
+go get -u github.com/jingweno/ccat # colorized-cat
+
 # Finish
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 touch ~/.dotfiles
