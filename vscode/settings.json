@@ -3,7 +3,7 @@
 	// Controls the font family.
 	"editor.fontFamily": "'Consolas','Courier New', monospace, 'Droid Sans Fallback'",
 	// Controls the font size.
-	"editor.fontSize": 16,
+	"editor.fontSize": 18,
 	// Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
 	"editor.tabSize": 4,
 	// Controls if the editor will insert spaces for tabs. Accepted values:  "auto", true, false. If set to "auto", the value will be guessed when a file is opened.
@@ -106,6 +106,6 @@
 
 	//------- Integrated Terminal -------
 	"terminal.integrated.shell.linux": "zsh",
-    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontSize": 15,
     "vsicons.dontShowNewVersionMessage": true
 }

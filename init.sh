@@ -150,14 +150,11 @@ fi
 if $ubuntu; then 
     sudo apt-get install xterm
     sudo update-alternatives --config x-terminal-emulator
-else
+elseP
     cask-install xterm
 fi
 ln -sf ~/dotfiles/xterm/Xresources ~/.Xresources
 xrdb -merge ~/.Xresources
-
-# Terminal 
-go get -u github.com/jingweno/ccat # colorized-cat
 
 # Finish
 ln -sf ~/dotfiles/zshrc ~/.zshrc

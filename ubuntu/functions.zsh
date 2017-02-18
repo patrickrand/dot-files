@@ -11,4 +11,4 @@ vscode-download() {
     curl -L -o ~/Downloads/vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
 }
 
-alias signout='gnome-session quit'
+alias signout='gnome-session-quit'
