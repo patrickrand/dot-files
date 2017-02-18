@@ -5,10 +5,12 @@
 # macOS
 .DS_Store
 
-# IntelliJ
+# IDE
 .idea
 *.iml
+.vscode
 
 # Maven
+.classpath
 .project
 .settings

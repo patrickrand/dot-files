@@ -1,9 +1,9 @@
 {
 	//-------- Editor configuration --------
 	// Controls the font family.
-	"editor.fontFamily": " 'Go Mono','Consolas','Courier New', monospace, 'Droid Sans Fallback'",
+	"editor.fontFamily": "'Consolas','Courier New', monospace, 'Droid Sans Fallback'",
 	// Controls the font size.
-	"editor.fontSize": 20,
+	"editor.fontSize": 16,
 	// Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
 	"editor.tabSize": 4,
 	// Controls if the editor will insert spaces for tabs. Accepted values:  "auto", true, false. If set to "auto", the value will be guessed when a file is opened.
@@ -106,6 +106,6 @@
 
 	//------- Integrated Terminal -------
 	"terminal.integrated.shell.linux": "zsh",
-	"terminal.integrated.fontSize": 18,
-	"terminal.integrated.fontFamily": "Consolas"
+    "terminal.integrated.fontSize": 13,
+    "vsicons.dontShowNewVersionMessage": true
 }
