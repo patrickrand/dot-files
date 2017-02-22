@@ -2,3 +2,4 @@
 
 - setup ssh keys (genearte, eval)
 - git is required to init.sh, so i need a curl script that install git, and then clones dotfiles
+- chsh is no good because it kills the current shell

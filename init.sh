@@ -2,8 +2,8 @@
 
 if [ -e ~/.dotfiles ]; then
     echo "User environment has already been initialized"
-    return 0
-fij
+#    return 0
+fi
 
 macOS=false
 ubuntu=false
@@ -66,6 +66,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # Load nvm
 nvm install v4.3 --lts # required for AWS Lambda
 nvm install v6.9 --lts
+nvm install v7 --lts
 [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-nvm ]] && git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
 # npm (Node.js)
