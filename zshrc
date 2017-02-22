@@ -5,8 +5,14 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export EDITOR='vim'
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
+#export GOROOT=/usr/local/go
+export GOROOT=/usr/local/Cellar/go/1.8/libexec
 export XTERM_LOCALE=en_US.UTF-8
+
+export AWS_DEFAULT_PROFILE=prand
+export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id) \
+ AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key) \
+ AWS_DEFAULT_REGION=$(aws configure get region)
 
 # Path
 export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin:/sbin
@@ -51,3 +57,7 @@ spinner() {
     done
     printf "\r✓ $1\n"
 }
+
+
+export SWAPEX_ENVIRONMENT=prand
+export SWAPEX_PARALLELISM=30
