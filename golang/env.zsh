@@ -1,6 +1,6 @@
-go get -u \
-    github.com/jingweno/ccat \
-    github.com/derekparker/delve/cmd/dlv
+# go get -u \
+#     github.com/jingweno/ccat \
+#     github.com/derekparker/delve/cmd/dlv
 
 # cd ~/Downloads
 # curl -L -O https://download.jetbrains.com/go/gogland-163.12024.32.tar.gz

@@ -5,8 +5,8 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export EDITOR='vim'
 export GOPATH=$HOME/go
-#export GOROOT=/usr/local/go
-export GOROOT=/usr/local/Cellar/go/1.8/libexec
+export GOROOT=/usr/local/go
+#export GOROOT=/usr/local/Cellar/go/1.8/libexec
 export XTERM_LOCALE=en_US.UTF-8
 
 export AWS_DEFAULT_PROFILE=prand
@@ -59,5 +59,4 @@ spinner() {
 }
 
 
-export SWAPEX_ENVIRONMENT=prand
-export SWAPEX_PARALLELISM=30
+source ~/.bashrc
