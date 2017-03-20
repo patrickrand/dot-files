@@ -101,7 +101,6 @@ fi
 vscode_exts=(
     HookyQR.beautify
     PeterJausovec.vscode-docker
-    Pivotal.vscode-concourse
     lukehoban.Go
     mauve.terraform
     rebornix.Ruby

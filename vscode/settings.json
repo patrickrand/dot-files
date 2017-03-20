@@ -108,6 +108,7 @@
 	"terminal.integrated.shell.linux": "/bin/zsh",
 	"terminal.integrated.shell.osx": "/bin/zsh",
     "terminal.integrated.fontSize": 15,
+	"terminal.integrated.fontFamily": "Consolas",
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.projectDetection.autoReload": true,
     "workbench.iconTheme": "vscode-icons"
