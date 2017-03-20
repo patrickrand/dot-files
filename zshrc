@@ -23,13 +23,14 @@ ZSH_THEME="patrickr"
 DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+unsetopt AUTO_CD # worst feature ever
 
 # SSH agent
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-   eval $(ssh-agent)
+#   eval $(ssh-agent)
 fi
 #export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add
+#ssh-add -l > /dev/null || ssh-add
 
 # NVM
 export NVM_DIR="$HOME/.nvm"

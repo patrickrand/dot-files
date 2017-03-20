@@ -1,7 +1,7 @@
 {
 	//-------- Editor configuration --------
 	// Controls the font family.
-	"editor.fontFamily": "'Consolas','Courier New', monospace, 'Droid Sans Fallback'",
+	"editor.fontFamily": "'Go Mono','Consolas','Courier New', monospace, 'Droid Sans Fallback'",
 	// Controls the font size.
 	"editor.fontSize": 16,
 	// Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
@@ -48,9 +48,9 @@
 	// When enabled, will trim trailing whitespace when you save a file.
 	"files.trimTrailingWhitespace": false,
 	// Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange". If set to "afterDelay" you can configure the delay in "files.autoSaveDelay".
-	"files.autoSave": "afterDelay",
+	"files.autoSave": "onFocusChange",
 	// Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
-	"files.autoSaveDelay": 1000,
+	// "files.autoSaveDelay": 1000,
 	//-------- File Explorer configuration --------
 	// Number of editors shown in the Open Editors pane. Set it to 0 to hide the pane.
 	"explorer.openEditors.visible": 0,
@@ -93,7 +93,7 @@
 	// Complete functions with their parameter signature
 	"go.useCodeSnippetsOnFunctionSuggest": true,
 	// Specifies the GOPATH to use when no environment variable is set.
-	"go.gopath": "/home/patrickr/go",
+	"go.gopath": "~/go",
 	// Specifies the GOROOT to use when no environment variable is set.
 	"go.goroot": "/usr/local/go",
 	// [EXPERIMENTAL] Run formatting tool on save.
@@ -108,5 +108,7 @@
 	"terminal.integrated.shell.linux": "/bin/zsh",
 	"terminal.integrated.shell.osx": "/bin/zsh",
     "terminal.integrated.fontSize": 15,
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.projectDetection.autoReload": true,
+    "workbench.iconTheme": "vscode-icons"
 }

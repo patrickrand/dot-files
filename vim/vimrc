@@ -13,6 +13,6 @@ set wildmode=longest,list
 syntax enable  
 set number  
 set tabstop=4 shiftwidth=4 expandtab
-
+set backspace=indent,eol,start
 "nnoremap <leader>r :w<CR>:GoBuild<CR>
 :map <leader>[ :w<CR>:GoBuild<CR>
