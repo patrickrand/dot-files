@@ -2,7 +2,7 @@
   name = patrickrand
   email = prand0001@gmail.com
 [push]
-  default = simple
+  default = current
 [core]
   excludesfile = ~/.gitignore_global
 	editor = vim
