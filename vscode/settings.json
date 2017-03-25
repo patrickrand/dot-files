@@ -34,7 +34,10 @@
 	// Controls how folders are being reopened after a restart. Select 'none' to never reopen a folder, 'one' to reopen the last folder you worked on or 'all' to reopen all folders of your last session.
 	"window.reopenFolders": "one",
 	// Adjust the zoom level of the window. The original size is 0 and each increment above or below represents zooming 20% larger or smaller.
-	"window.zoomLevel": 0,
+    "window.zoomLevel": 0,
+	
+	"workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
 	//-------- Files configuration --------
 	// Configure glob patterns for excluding files and folders.
 	"files.exclude": {
@@ -111,5 +114,6 @@
 	"terminal.integrated.fontFamily": "Consolas",
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.projectDetection.autoReload": true,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Solarized Light"
 }
