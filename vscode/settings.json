@@ -3,7 +3,7 @@
 	// Controls the font family.
 	"editor.fontFamily": "'Go Mono','Consolas','Courier New', monospace, 'Droid Sans Fallback'",
 	// Controls the font size.
-	"editor.fontSize": 16,
+	"editor.fontSize": 15,
 	// Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
 	"editor.tabSize": 4,
 	// Controls if the editor will insert spaces for tabs. Accepted values:  "auto", true, false. If set to "auto", the value will be guessed when a file is opened.
@@ -34,9 +34,9 @@
 	// Controls how folders are being reopened after a restart. Select 'none' to never reopen a folder, 'one' to reopen the last folder you worked on or 'all' to reopen all folders of your last session.
 	"window.reopenFolders": "one",
 	// Adjust the zoom level of the window. The original size is 0 and each increment above or below represents zooming 20% larger or smaller.
-    "window.zoomLevel": 0,
+	"window.zoomLevel": 0,
 	
-	"workbench.editor.enablePreview": false,
+	// "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
 	//-------- Files configuration --------
 	// Configure glob patterns for excluding files and folders.
@@ -44,6 +44,14 @@
 		"**/.git": true,
 		"**/.DS_Store": true
 	},
+	"files.watcherExclude": {
+    	"**/.git/objects/**": true,
+    	"**/node_modules/**": true,
+		"**/vendor/**": true,
+		"**/dist/**": true,
+		"**/tmp/**": true,
+		"**/tools/**": true
+  	},
 	// The default character set encoding to use when reading and writing files.
 	"files.encoding": "utf8",
 	// The default end of line character.
@@ -114,6 +122,11 @@
 	"terminal.integrated.fontFamily": "Consolas",
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.projectDetection.autoReload": true,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Solarized Light"
+	"workbench.colorTheme": "Life on mars",
+
+	// override "default" settings introduced in v1.13
+	"editor.minimap.enabled": false,
+	"editor.renderIndentGuides": false,
+	"editor.dragAndDrop": false,
+	"workbench.iconTheme": "vscode-icons"
 }
