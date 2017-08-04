@@ -41,7 +41,8 @@ export NVM_DIR="$HOME/.nvm"
 for file in ~/dotfiles/**/**.zsh; do
     source $file
 done
-export PATH=$PATH:/Users/prand/.nvm/versions/node/v7.6.0/bin/npm
+nvm use 8.2.1
+export PATH=$PATH:/Users/prand/.nvm/versions/node/v8.2.1/bin/npm
 
 # Aliases
 alias cat="ccat"
