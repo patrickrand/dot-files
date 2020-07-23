@@ -1,6 +1,7 @@
 [user]
-  name = patrickrand
-  email = prand0001@gmail.com
+  name = Patrick Rand
+  useConfigOnly = true
+  # email = prand0001@gmail.com
 [push]
   default = current
 [core]
