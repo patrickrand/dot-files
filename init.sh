@@ -14,7 +14,7 @@ case $(uname) in
         brew install git
         brew tap homebrew/cask-versions
         brew install git npm maven python wget awscli golang cabextract
-        brew cask install iterm2 corretto visual-studio-code docker
+        brew cask install iterm2 corretto visual-studio-code docker google-cloud-sdk intellij-idea amethyst
         ;;
     Linux)
         ubuntu=true
