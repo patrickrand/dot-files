@@ -7,20 +7,19 @@ export LANGUAGE=en_US.UTF-8
 export EDITOR='vim'
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
-#export GOROOT=/usr/local/Cellar/go/1.8/libexec
 export XTERM_LOCALE=en_US.UTF-8
 
-export AWS_DEFAULT_PROFILE=prand
-export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id) \
- AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key) \
- AWS_DEFAULT_REGION=$(aws configure get region)
+# export AWS_DEFAULT_PROFILE=prand
+# export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id) \
+#  AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key) \
+#  AWS_DEFAULT_REGION=$(aws configure get region)
 
 # Path
 export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin:/sbin
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # Oh-My-Zsh 
-ZSH_THEME="patrickr"
+ZSH_THEME="prand"
 DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
@@ -41,26 +40,10 @@ export NVM_DIR="$HOME/.nvm"
 for file in ~/dotfiles/**/**.zsh; do
     source $file
 done
-nvm use 8.2.1
+nvm use 10 > /dev/null
 export PATH=$PATH:/Users/prand/.nvm/versions/node/v8.2.1/bin/npm
 
 # Aliases
 alias cat="ccat"
 
-spinner() {
-    pid=$! # Process Id of the previous running command
-
-    spin='-\|/'
-
-    i=0
-    while kill -0 $pid 2>/dev/null
-    do
-        i=$(( (i+1) %4 ))
-        printf "\r${spin:$i:1} $1"
-        sleep .1E
-    done
-    printf "\r✓ $1\n"
-}
-
-
-source ~/.bashrc
+[[ -f ~/.bashrc ]] && source ~/.bashrc

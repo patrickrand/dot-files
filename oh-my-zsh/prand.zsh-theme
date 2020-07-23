@@ -1,4 +1,4 @@
-# oh-my-zsh PatrickR Theme
+# oh-my-zsh prand Theme
 # Original: https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/bureau.zsh-theme
 
 ### Git [±master ▾●]

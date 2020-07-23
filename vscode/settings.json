@@ -1,7 +1,7 @@
 {
 	//-------- Editor configuration --------
 	// Controls the font family.
-	"editor.fontFamily": "'Go Mono','Consolas','Courier New', monospace, 'Droid Sans Fallback'",
+	"editor.fontFamily": "'Consolas','Courier New', monospace, 'Droid Sans Fallback'",
 	// Controls the font size.
 	"editor.fontSize": 15,
 	// Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
@@ -127,6 +127,5 @@
 	// override "default" settings introduced in v1.13
 	"editor.minimap.enabled": false,
 	"editor.renderIndentGuides": false,
-	"editor.dragAndDrop": false,
-	"workbench.iconTheme": "vscode-icons"
+	"editor.dragAndDrop": false
 }
