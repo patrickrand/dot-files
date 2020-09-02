@@ -13,7 +13,7 @@ case $(uname) in
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
         brew install git
         brew tap homebrew/cask-versions
-        brew install git npm maven python wget awscli golang cabextract
+        brew install git npm maven python wget awscli golang cabextract grpcurl
         brew cask install iterm2 corretto visual-studio-code docker google-cloud-sdk intellij-idea amethyst
         ;;
     Linux)

@@ -1,6 +1,7 @@
 # General
 *.swp
 *.a
+*patrick*
 
 # macOS
 .DS_Store
@@ -10,9 +11,19 @@
 *.iml
 .vscode
 
-# Maven
+# Java
 .classpath
 .project
 .settings
+.java-version
 
-*patrick*
+# VS Code
+.factorypath
+
+# Scala
+.scalafmt.conf
+.bloop
+.metals
+project/project
+project/.bloop
+project/metals.sbt

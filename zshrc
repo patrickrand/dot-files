@@ -15,7 +15,7 @@ export XTERM_LOCALE=en_US.UTF-8
 #  AWS_DEFAULT_REGION=$(aws configure get region)
 
 # Path
-export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin:/sbin
+export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/bin:/sbin:$PATH
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # Oh-My-Zsh 
@@ -45,5 +45,12 @@ export PATH=$PATH:/Users/prand/.nvm/versions/node/v8.2.1/bin/npm
 
 # Aliases
 alias cat="ccat"
+alias zshrc="source ~/.zshrc"
 
 [[ -f ~/.bashrc ]] && source ~/.bashrc
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+# Created by `userpath` on 2020-07-27 21:49:45
+export PATH="$PATH:/Users/prand/.local/bin"

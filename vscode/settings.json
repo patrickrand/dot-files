@@ -42,16 +42,33 @@
 	// Configure glob patterns for excluding files and folders.
 	"files.exclude": {
 		"**/.git": true,
-		"**/.DS_Store": true
+		"**/.DS_Store": true,
+		"**/.project": true,
+		"**/.bloop": true,
+		"**/.metals": true,
+		"**/.ammonite": true,
+		"**/.tox": true,
+		"**/.bigquery": true,
+		"**/.scio-repl": true,
+		"**/target": true,
+		"project/project": true
 	},
 	"files.watcherExclude": {
-    	"**/.git/objects/**": true,
-    	"**/node_modules/**": true,
+		"**/.git/objects/**": true,
+		"**/node_modules/**": true,
 		"**/vendor/**": true,
 		"**/dist/**": true,
 		"**/tmp/**": true,
-		"**/tools/**": true
-  	},
+		"**/tools/**": true,
+		"**/.bloop": true,
+		"**/.metals": true,
+		"**/.ammonite": true,
+		"**/.tox": true,
+		"**/.bigquery": true,
+		"**/.scio-repl": true,
+		"**/target": true,
+		"project/project": true
+	},
 	// The default character set encoding to use when reading and writing files.
 	"files.encoding": "utf8",
 	// The default end of line character.
@@ -69,9 +86,6 @@
 	"explorer.openEditors.dynamicHeight": true,
 	// Controls if the explorer should automatically reveal files when opening them.
 	"explorer.autoReveal": true,
-	//-------- Git configuration --------
-	// Is git enabled
-	"git.enabled": false,
 	// Path to the git executable
 	"git.path": null,
 	// Whether auto fetching is enabled.
@@ -127,5 +141,44 @@
 	// override "default" settings introduced in v1.13
 	"editor.minimap.enabled": false,
 	"editor.renderIndentGuides": false,
-	"editor.dragAndDrop": false
+	"editor.dragAndDrop": false,
+	"java.semanticHighlighting.enabled": true,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+	"java.codeGeneration.generateComments": true,
+	"java.project.importOnFirstTimeStartup": "automatic",
+	"java.autobuild.enabled": true,
+	"java.configuration.runtimes": [
+		{
+		  "name": "JavaSE-1.8",
+		  "path": "/Users/prand/.jenv/versions/1.8.0.262"
+		},
+		{
+		  "name": "JavaSE-11",
+		  "path": "/Users/prand/.jenv/versions/11.0.8",
+		  "default":  true
+		 }
+	  ],
+	"java.completion.importOrder": [
+
+		"java",
+		"javax",
+		"com",
+		"org"
+	],
+	"java.import.gradle.enabled": false,
+	"java.configuration.maven.userSettings": "/Users/prand/.m2/settings.xml",
+	"java.configuration.checkProjectSettingsExclusions": false,
+	"java.maven.updateSnapshots": false,
+	"java.format.enabled": true,
+	"protoc": {
+		"options": [
+			"--proto_path=${workspaceFolderBasename}"
+		]
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"workbench.iconTheme": "vscode-icons"
 }
